@@ -1,0 +1,45 @@
+
+<section class="mainApp">
+  <div class="leftPanel">
+    <header>
+      <%= render partial: "layouts/new_room_form" %>
+    </header>
+    <%= turbo_stream_from "rooms" %>
+    <%= turbo_stream_from "users" %>
+
+    <div class="chats">
+      <div id="rooms">
+        <%= render @rooms %>
+      </div>
+      <div id="users">
+        <%= render @users %>
+      </div>
+    </div>
+  </div>
+  
+  <div class="rightPanel">
+    <div class="topBar">
+      <div class="rightSide">
+        <%= button_to 'Sign out', destroy_user_session_path, method: :delete , class: 'logout' %>
+      </div>
+      
+      <div class="leftSide">
+        <% if @single_room %>
+          <p class="chatName"><%= @single_room.name || @user.username %> <span>Hi, <%= current_user.email %>!</span></p>
+        <% else %>
+          <p class="chatName">HI, <%= current_user.email %>!</p>
+        <% end %>
+      </div>
+    </div>
+    
+    <div class="convHistory userBg" id="messages">
+      <% if @single_room %>
+        <%= turbo_stream_from @single_room %>
+        <%= render @messages %>
+      <% end %>
+    </div>
+    <% if @single_room %>
+      <%= render partial: 'layouts/new_message_form' %>
+    <% end %>
+  </div>
+</section>

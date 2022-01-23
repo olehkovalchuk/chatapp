@@ -1,0 +1,7 @@
+<%= form_with(model: @room, remote: true, class: "d-flex") do |f| %>
+  <%= f.text_field :name, class: "searchChats", autocomplete: 'off', placeholder: "New room name..." %>
+
+  <%= button_tag(type: "submit", class: "send-message") do %>
+    Create
+  <% end %>
+<% end %>

@@ -1,0 +1,23 @@
+<%= link_to room do %>
+<% if room.id == params[:id].to_i && params[:controller] == 'rooms' %>
+<div class="chatButton active">
+<% else %>
+<div class="chatButton">
+<%end%>
+  <div class="chatInfo">
+  <div class="image">
+  
+  </div>
+  <p class="name">
+    <%= room.name.truncate(20) %>
+  </p>
+  </div>
+  
+  <div class="status normal">
+    <% if room.messages.last %>
+      <p class="date"><%= room.messages.last.created_at.strftime('%H:%M')  %></p>
+    <% end %>
+    <p class="count"><%= room.messages.count %></p>
+  </div>
+</div>
+<% end %>

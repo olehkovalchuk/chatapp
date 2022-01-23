@@ -1,0 +1,16 @@
+current directory: /home/ubuntu/newapp/myapps/ruby/3.1.0/gems/debug-1.4.0/ext/debug
+/home/ubuntu/.rvm/rubies/ruby-3.1.0/bin/ruby -I /home/ubuntu/.rvm/rubies/ruby-3.1.0/lib/ruby/3.1.0 -r ./siteconf20220123-40061-j9p8f8.rb extconf.rb
+creating Makefile
+
+current directory: /home/ubuntu/newapp/myapps/ruby/3.1.0/gems/debug-1.4.0/ext/debug
+make DESTDIR\= clean
+
+current directory: /home/ubuntu/newapp/myapps/ruby/3.1.0/gems/debug-1.4.0/ext/debug
+make DESTDIR\=
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/ubuntu/newapp/myapps/ruby/3.1.0/gems/debug-1.4.0/ext/debug
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20220123-40061-v06v62/debug

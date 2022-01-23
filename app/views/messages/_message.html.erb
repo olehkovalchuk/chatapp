@@ -1,0 +1,6 @@
+<div class="msg messageReceived msg-<%= message.user.id %>" id="cont-<%= message.id %>">
+  <b class="material-icons"><%= message.user.username %></b>
+  <br/>
+  <%= message.content %>
+  <span class="timestamp"><%= message.created_at.strftime('%H:%M') %></span>
+</div>

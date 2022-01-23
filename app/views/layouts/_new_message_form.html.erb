@@ -1,0 +1,9 @@
+    
+    <div class="replyBar">
+      <%= form_with(model: [@single_room , @message], remote: true, class: "d-flex" ) do |f| %>
+      <%= f.text_field :content, id: 'chat-text', class: "replyMessage", autocomplete: 'off', placeholder: "Type your message..." %>
+      <%= button_tag(type: "submit", class: "send-message") do %>
+        Send
+      <% end %>
+      <% end %>
+    </div>

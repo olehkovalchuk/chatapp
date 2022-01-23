@@ -1,0 +1,16 @@
+<%= link_to user do %>
+<% if user.id == params[:id].to_i && params[:controller] == 'users' %>
+<div class="chatButton active">
+<% else %>
+<div class="chatButton">
+<%end%>
+  <div class="chatInfo">
+  <div class="image my-image">
+  
+  </div>
+  <p class="name">
+    <%= user.email.truncate(20) %>
+  </p>
+  </div>
+</div>
+<% end %>
